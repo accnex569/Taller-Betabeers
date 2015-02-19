@@ -1,7 +1,9 @@
-var express = require('express');
-
-var app = express();
-var io = require('socket.io').listen(app);
+var express = require('express'),
+    app = express(),
+    http = require('http'),
+    server = http.createServer(app),
+    io = require('socket.io').listen(server);
+   // io = require('socket.io').listen(app);
 
 var PORT = process.env.PORT || 8080;
 
